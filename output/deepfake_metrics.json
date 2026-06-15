@@ -1,0 +1,22 @@
+{
+  "overall_accuracy": 0.8529,
+  "eer_percent": 15.3049,
+  "f1_score_macro": 0.8529,
+  "per_class_accuracy_real": 0.8681,
+  "per_class_accuracy_fake": 0.8385,
+  "roc_auc": 0.9145,
+  "best_threshold": 0.5,
+  "confusion_matrix": [
+    [
+      1375,
+      209
+    ],
+    [
+      268,
+      1391
+    ]
+  ],
+  "all_thresholds_passed": false,
+  "train_samples": 16000,
+  "test_samples": 3243
+}

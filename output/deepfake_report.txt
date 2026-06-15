@@ -1,0 +1,26 @@
+Deepfake Audio Detection - Performance Report
+==================================================
+
+Overall Accuracy     : 85.29%  (req >=80%)
+Equal Error Rate     : 15.30%        (req <=12%)
+F1 Score (macro)     : 85.29%  (req >=80%)
+Per-Class Acc (Real) : 86.81%  (req >=75%)
+Per-Class Acc (Fake) : 83.85%  (req >=75%)
+ROC AUC              : 0.9145
+
+All Thresholds Passed: False
+
+Confusion Matrix:
+[[1375  209]
+ [ 268 1391]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Real       0.84      0.87      0.85      1584
+        Fake       0.87      0.84      0.85      1659
+
+    accuracy                           0.85      3243
+   macro avg       0.85      0.85      0.85      3243
+weighted avg       0.85      0.85      0.85      3243
+
