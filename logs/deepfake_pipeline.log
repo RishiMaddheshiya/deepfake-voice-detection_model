@@ -1,0 +1,15 @@
+22:53:31  INFO      ====================================================================
+22:53:31  INFO        Deepfake Audio Detection — Full Training Pipeline
+22:53:31  INFO      ====================================================================
+22:53:31  INFO        Data root    : data
+22:53:31  INFO        Max files    : 3000 per split (1500 real + 1500 fake)
+22:53:31  INFO        Workers      : 4
+22:53:31  INFO        Skip EDA     : True
+22:53:31  INFO        Skip features: True
+22:53:31  INFO        Skip train   : False
+22:53:31  INFO      
+22:53:31  INFO      [SKIP]  EDA (data_manifest.csv already exists)
+22:53:31  INFO      [SKIP]  Feature extraction (.npy files already exist)
+22:53:31  INFO      ====================================================================
+22:53:31  INFO      STARTING  Stage 2 -- Model Training & Evaluation  ->  deepfake_train.py
+22:53:31  INFO      ====================================================================

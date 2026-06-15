@@ -1,0 +1,10 @@
+22:26:06  INFO      ============================================================
+22:26:06  INFO      Deepfake Audio — Stage 1: FAST Feature Extraction
+22:26:06  INFO        SR=16000  Duration=3.0s  Workers=4
+22:26:06  INFO        Max files per split: 3000 (balanced per class)
+22:26:06  INFO      ============================================================
+22:26:06  INFO      Manifest: 69,300 files
+22:26:06  INFO      
+--- Split: train (53,868 files) ---
+22:26:06  INFO        Limited to 3,000 files (1500 real + 1500 fake)
+22:26:06  INFO        Extracting 3,000 files with 4 parallel workers...

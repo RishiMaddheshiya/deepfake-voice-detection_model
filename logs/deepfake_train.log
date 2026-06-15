@@ -1,0 +1,72 @@
+21:23:30  INFO      ============================================================
+21:23:30  INFO      Deepfake Audio — Final Training (MLP + XGBoost + EER Fix)
+21:23:30  INFO      ============================================================
+21:23:30  INFO      STEP 1 - LOAD ALL SPLITS
+21:23:30  INFO        train   : (8000, 284)  Real=4000  Fake=4000
+21:23:30  INFO        test    : (4634, 284)  Real=2264  Fake=2370
+21:23:30  INFO        eval    : (8000, 284)  Real=4000  Fake=4000
+21:23:30  INFO      
+  Combined training: (16000, 284)  Real=8000  Fake=8000
+21:23:30  INFO        Train: (16000, 284)  Test: (3243, 284)  Calibration: (1391, 284)
+21:23:30  INFO      ============================================================
+21:23:30  INFO      STEP 2 - SCALE & SELECT FEATURES
+21:23:30  INFO        Selected 200 best features
+21:23:30  INFO      ============================================================
+21:23:30  INFO      STEP 3 - SMOTE BALANCING
+21:23:30  INFO        After SMOTE: 16,000  Real=8000  Fake=8000
+21:23:30  INFO      ============================================================
+21:23:30  INFO      STEP 4 - TRAIN CLASSIFIERS
+21:23:30  INFO        Training MLP Neural Network...
+21:23:51  INFO          MLP acc: 84.86%
+21:23:51  INFO        Training XGBoost...
+21:24:00  INFO          XGBoost acc: 81.75%
+21:24:00  INFO        Training GradientBoosting...
+21:29:58  INFO          GBM acc: 81.04%
+21:29:58  INFO        Training Random Forest...
+21:30:02  INFO        Training ExtraTrees...
+21:30:03  INFO      ============================================================
+21:30:03  INFO      STEP 5 - ISOTONIC CALIBRATION
+21:30:04  INFO        Calibrated with isotonic regression on held-out set
+21:30:04  INFO      ============================================================
+21:30:04  INFO      STEP 6 - THRESHOLD OPTIMIZATION
+21:30:04  INFO        EER-opt    t=0.274  acc=84.8%  f1=84.8%  eer=15.3%  ar=85.0%  af=84.6%  fail
+21:30:04  INFO        F1-opt     t=0.500  acc=85.3%  f1=85.3%  eer=15.3%  ar=86.8%  af=83.8%  fail
+21:30:04  INFO        Youden     t=0.562  acc=85.3%  f1=85.3%  eer=15.3%  ar=86.8%  af=83.8%  fail
+21:30:04  INFO      
+  Best threshold: 0.500
+21:30:04  INFO      ============================================================
+21:30:04  INFO      STEP 7 - FINAL RESULTS
+21:30:04  INFO      
+  =======================================================
+21:30:04  INFO        Metric                        Achieved  Required  Pass?
+21:30:04  INFO        -----------------------------------------------------
+21:30:04  INFO        Overall Accuracy                85.29%     >=80%  OK
+21:30:04  INFO        Equal Error Rate                15.30%     <=12%  FAIL
+21:30:04  INFO        F1 Score (macro)                85.29%     >=80%  OK
+21:30:04  INFO        Per-Class Acc (Real)            86.81%     >=75%  OK
+21:30:04  INFO        Per-Class Acc (Fake)            83.85%     >=75%  OK
+21:30:04  INFO        ROC AUC                        0.9145
+21:30:04  INFO        =======================================================
+21:30:04  INFO      
+  Confusion Matrix:
+[[1375  209]
+ [ 268 1391]]
+21:30:04  INFO      
+              precision    recall  f1-score   support
+
+        Real       0.84      0.87      0.85      1584
+        Fake       0.87      0.84      0.85      1659
+
+    accuracy                           0.85      3243
+   macro avg       0.85      0.85      0.85      3243
+weighted avg       0.85      0.85      0.85      3243
+
+21:30:04  INFO        All thresholds passed: False
+21:30:04  INFO      ============================================================
+21:30:04  INFO      STEP 8 - SAVE
+21:30:04  INFO        Saved: saved_model/deepfake_model.pkl
+21:30:04  INFO        Saved: deepfake_metrics.json
+21:30:04  INFO        Saved: deepfake_report.txt
+21:30:04  INFO      ============================================================
+21:30:04  INFO      Stage 2 COMPLETE
+21:30:04  INFO      ============================================================
